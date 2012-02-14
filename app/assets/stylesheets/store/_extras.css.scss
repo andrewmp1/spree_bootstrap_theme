@@ -1,0 +1,191 @@
+/*--------------------------------------*/
+/* Main search bar
+/*--------------------------------------*/
+#search-bar {
+  display: block;
+}
+
+/*--------------------------------------*/
+/* Navigation
+/*--------------------------------------*/
+nav#top-nav-bar {
+  text-align: right;
+  margin-top: 20px;
+
+  ul {
+    li {
+      margin-bottom: 5px;
+      padding-left: 10px;
+
+      a{
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;          
+      }
+    }
+  }
+}
+
+nav #main-nav-bar {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 20px;
+  border-bottom: 1px solid $c_border;
+  padding-bottom: 6px;
+
+  li {
+    a {
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    &#link-to-cart {
+      float: right;
+      padding-left: 24px;
+      background: url("cart.png") no-repeat left center;
+
+      &:hover {
+        border-color: $c_colored;
+
+        .amount {
+          border-color: $c_colored;            
+        }
+      }
+
+      a {
+        font-weight: normal;
+        font-size: 16px;
+        color: $c_colored;
+
+        .amount {
+          font-size: 18px;
+          font-weight: bold;
+          border-left: 1px solid $c_border;
+          padding-left: 5px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+nav#taxonomies {
+  .taxonomy-root {
+    text-transform: uppercase;
+    border-bottom: 1px solid $c_border;
+    margin-bottom: 5px;
+    color: $c_colored;
+  }
+
+  .taxons-list {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style: disc outside;
+  }
+}
+
+/*--------------------------------------*/
+/* Forms
+/*--------------------------------------*/
+textarea, input[type="date"], 
+input[type="datetime"], input[type="datetime-local"],
+input[type="email"], input[type="month"], input[type="number"],
+input[type="password"], input[type="search"], input[type="tel"],
+input[type="text"], input[type="time"], input[type="url"], 
+input[type="week"] {
+  border: 1px solid $c_border;
+  padding: 2px 5px;    
+  font-family: "Ubuntu", sans-serif;
+
+  &:active, &:focus {
+    border-color: $c_colored;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+  }
+
+  &.error {
+    border-color: $c_red;
+  }
+}
+
+select {
+  border: 1px solid $c_border;
+  font-family: "Ubuntu", sans-serif;
+  background-image: url('select_arrow.gif');
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  &:active, &:focus {
+    @extend input[type="text"]:focus  
+  }
+}
+
+label.error {
+  display: block;
+  font-size: 11px;
+  color: $c_red;
+  margin-top: 3px;
+}
+
+input[type="submit"], input[type="button"],
+input[type= "reset"], button, a.button {
+  background-color: $c_colored;
+  background-image: none;
+  text-shadow: none;
+  color: white;
+  font-weight: bold;
+  font-family: "Ubuntu", sans-serif;
+  border: 1px solid rgba(0, 138, 189, .75);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+   -khtml-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+      -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+       -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
+  -webkit-border-radius: 0px;
+   -khtml-border-radius: 0px;
+     -moz-border-radius: 0px;
+      -ms-border-radius: 0px;
+       -o-border-radius: 0px;
+          border-radius: 0px;
+  
+  // font-size: 13px;
+  vertical-align:  text-top;
+
+  &.large {
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-image: none;
+    background-color: $c_base;
+    border-color: $c_base;
+    color: white !important;
+  }
+}
+
+.ie8 {
+  a.button {
+    line-height: 16px;
+  }
+} 
+
+input[type="checkbox"], input[type="button"],
+input[type="submit"], input[type="reset"], 
+button, label {
+  vertical-align: middle;
+}
+
+a.button {
+  display: inline-block;
+  line-height: 15px;
+  margin-top: -2px;
+  vertical-align: bottom;
+}
+
+
+

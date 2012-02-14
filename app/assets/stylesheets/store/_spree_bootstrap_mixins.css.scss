@@ -1,0 +1,101 @@
+/* This file wraps bootstraps class names
+ to match spree's default class naming
+ scheme for things like buttons,
+/* flash messages, etc.  Any bootstrap  */
+/* variables defined here will override */
+/* default values */
+/*--------------------------------------*/
+/* Colors
+/*--------------------------------------*/
+$c_base:        #404042;  /* Dark gray      */
+$c_gray1:       #bbbbbb;  /* Mid light gray */
+$c_colored:     #00ADEE;  /* Light blue     */
+$c_colored_alt: #f0f8ff;  /* Lighter blue   */
+$c_border:      #dedede;  /* Light gray     */
+$c_green:       #8dba53;  /* Spree green    */
+$c_red:         #e45353;  /* Error red      */
+
+/* require bootstrap files for mixins */
+
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/alerts";
+@import "bootstrap/buttons";
+
+
+/*------------------------------------------------------*/
+/* Changes to the default bootstrap variables 			*/
+/*------------------------------------------------------*/
+$gridColumns:             16;
+$gridColumnWidth:         40px;
+
+// Navbar
+$navbarHeight:                    30px;
+$navbarBackground:                $blueDark;
+$navbarBackgroundHighlight:       $blue;
+
+$navbarText:                      $grayLight;
+$navbarLinkColor:                 $grayLight;
+$navbarLinkColorHover:            $white;
+
+/* Flash alerts Spree uses flash.notice, .success & .error */
+/*--------------------------------------*/
+/* Flash messages
+/*--------------------------------------*/
+.flash {
+  @extend .alert;
+
+  &.notice {
+    @extend .alert-info;
+  }
+  &.success {
+    @extend .alert-success;
+  }
+  &.error {
+    @extend .alert-error;
+  }
+}
+
+.errorExplanation {
+  @extend .flash.error;
+  @extend .flash;
+
+  p {
+    font-weight: normal;
+  }
+
+  ul {
+    list-style: disc outside;
+    margin-left: 30px;
+
+    li {
+      font-weight: normal;
+    }
+  }
+}
+
+/* Buttons  */
+
+input[type="submit"], input[type="button"],
+input[type= "reset"], button, a.button {
+    @extend .btn;
+}
+
+/* Breadcrumb */
+
+/* Spree uses ol Bootstrap uses ul */
+/* Spree's progress-steps are > bootstraps */
+
+/* Forms    */
+
+
+/* Tables   */
+
+@import "bootstrap";
+
+
+
+
+
+
+

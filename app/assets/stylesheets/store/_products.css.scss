@@ -1,0 +1,150 @@
+/*--------------------------------------*/
+/* Products
+/*--------------------------------------*/
+.product-section-title {
+  text-transform: uppercase;
+  color: $c_colored;
+  margin-top: 15px;
+}
+
+.add-to-cart {
+  margin-top: 15px;
+
+  input[type="number"] {
+    width: 60px;
+    vertical-align: middle;
+    padding: 5px;
+    height: 35px;
+  }
+}
+
+span.price {
+  font-weight: bold;
+  color: $c_colored;
+
+  &.selling {
+    font-size: 20px;      
+  }
+  &.diff {
+    font-weight: bold
+  }  
+}
+
+ul#products {
+  margin-left: -10px;
+  margin-right: -10px;    
+
+  li {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+    a {
+      display: block;
+
+      &.info {
+        height: 35px;
+        margin-top: 5px;
+        color: $c_gray1;
+        border-bottom: 1px solid $c_border;
+      }
+    }
+
+    .product-image {
+      border: 1px solid $c_border;
+      padding: 5px;        
+      min-height: 110px;
+
+      &:hover {
+        border-color: $c_colored;
+      }
+
+    }
+
+    .price {
+      color: $c_colored;
+      font-size: 16px;
+      padding-top: 5px;
+      display: block;
+    }
+  }
+}
+
+.subtaxon-title {
+  text-transform: uppercase;
+
+  a {
+    color: $c_colored;  
+  }    
+}
+
+.search-results-title {
+  text-transform: uppercase;
+  border-bottom: 1px solid $c_border;
+  margin-bottom: 10px;
+}
+
+#sidebar_products_search {
+  .navigation {
+    margin-bottom: 15px;
+  }
+
+  span.category {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 5px;
+    color: #00adee;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.taxon {
+  overflow: hidden;
+}
+
+#product-images {
+  #main-image {
+    text-align: center;
+    border: 1px solid $c_border;
+  }
+}
+
+#product-description {
+  .product-title {
+    border-bottom: 1px solid $c_border;
+    margin-bottom: 15px;
+  } 
+}
+
+#product-thumbnails {
+  margin-top: 10px;
+
+  li {
+    margin-right: 6px;
+    border: 1px solid $c_border;
+
+    img {
+      padding: 5px;
+    }
+
+    &:hover, &.selected {
+      border-color: $c_colored;
+    }
+  }
+}
+
+#product-properties {
+  border: 1px solid $c_border;
+  padding: 10px;
+}
+
+#product-variants {
+  ul {
+    li {
+      padding: 5px;
+    }
+  }
+}
