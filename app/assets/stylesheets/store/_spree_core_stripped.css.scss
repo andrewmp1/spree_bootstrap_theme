@@ -1,0 +1,280 @@
+$c_base: #8dba53;
+$c_gray1: #8dba53;
+$c_colored: #8dba53;
+$c_border: #8dba53;
+
+/*--------------------------------------*/
+/* Checkout
+/*--------------------------------------*/
+
+.progress-steps {
+  list-style: decimal inside;
+  overflow: auto;
+
+  li {
+    float: left;
+    margin-right: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    color: $c_gray1;
+
+    &.current-first, &.current {
+      background-color: $c_colored;
+      color: white;
+    }
+
+    &.completed-first, &.completed {
+      background-color: $c_border;
+      color: white;
+
+      a {
+        color: white;
+      }
+
+      &:hover {
+        background-color: $c_colored;
+        color: white;
+
+        a {
+          color: white;
+
+          &:hover {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+#checkout-summary {
+  text-align: center;
+  border: 1px solid $c_border;
+  margin-top: 23px;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $c_colored;
+    border-bottom: 1px solid $c_border;
+  }
+
+  table {
+    width: 100%;
+
+    tr[data-hook="item_total"] {
+      td:last-child {
+        strong {
+          @extend span.price;
+        }
+      }
+    }
+
+    tr[data-hook="order_total"] {
+      border-bottom: none;
+    };
+
+    #summary-order-total {
+      @extend span.price;
+      font-size: 14px;
+    }
+  }
+}
+
+#billing, #shipping, #shipping_method,
+#payment, #order_details, #order_summary {
+  margin-top: 10px;
+  border: 1px solid $c_border;
+  padding: 10px;
+
+  legend {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: $c_colored;
+    padding: 5px;
+    margin-left: 15px;
+  }
+}
+
+#order_details, #order_summary {
+  padding: 0;
+
+  div:last-child {
+    margin-left: -1px;
+  }
+
+  .payment-info {
+    .cc-type {
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  td.price, td.total {
+    span {
+      @extend span.price;
+    }
+  }
+
+  table tfoot {
+    text-align: right;
+    color: $c_gray1;
+
+    tr {
+      border: none;
+    }
+
+    &#order-total {
+      text-transform: uppercase;
+      font-size: 16px;
+      color: $c_base;
+
+      tr {
+        border-top: 1px solid $c_border;
+
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .steps-data {
+    padding: 10px;
+
+    h6 {
+      border-bottom: 1px solid $c_border;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#shipping_method {
+  p {
+    label {
+      float: left;
+      font-weight: bold;
+      font-size: 14px;
+      margin-right: 40px;
+      padding: 5px;
+    }
+  }
+}
+
+p[data-hook="use_billing"] {
+  float: right;
+  margin-top: -38px;
+  background-color: white;
+  padding: 5px;
+}
+
+/*--------------------------------------*/
+/* Cart
+/*--------------------------------------*/
+table#cart-detail {
+  width: 100%;
+  tbody#line_items {
+    tr {
+
+      td[data-hook="cart_item_price"], td[data-hook="cart_item_total"] {
+        @extend span.price;
+        @extend span.price.selling;
+      }
+      td[data-hook="cart_item_quantity"] {
+        .line_item_quantity {
+          width: 40px;
+        }
+      }
+      td[data-hook="cart_item_delete"] {
+        .delete {
+          display: block;
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
+div[data-hook="inside_cart_form"] {
+  .links {
+    margin-top: 15px;
+  }
+
+  #subtotal {
+    text-align: right;
+    text-transform: uppercase;
+    margin-top: 10px;
+
+    span.order-total {
+      @extend span.price;
+    }
+  }
+}
+
+#empty-cart {
+  margin-top: 15px;
+  float: right;
+}
+
+/*--------------------------------------*/
+/* Account
+/*--------------------------------------*/
+#existing-customer, #new-customer, #forgot-password {
+  h6 {
+    text-transform: uppercase;
+    color: $c_colored;
+  }
+}
+
+#registration {
+  h6 {
+    text-transform: uppercase;
+    color: $c_colored;
+  }
+
+  #existing-customer {
+    width: auto;
+    text-align: left;
+  }
+}
+
+#user-info {
+  margin-bottom: 15px;
+  border: 1px solid $c_border;
+  padding: 10px;
+}
+
+/*--------------------------------------*/
+/* Order
+/*--------------------------------------*/
+#order_summary {
+  margin-top: 0;
+}
+#order {
+  p[data-hook="links"] {
+    margin-left: 10px;
+    overflow: auto;
+  }
+}
+
+table.order-summary {
+  tbody {
+    tr {
+      td {
+        width: 10%;
+        text-align: center;
+
+        &:first-child {
+          a {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $c_colored;
+          }
+        }
+      }
+    }
+  }
+}

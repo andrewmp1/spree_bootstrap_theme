@@ -1,19 +1,24 @@
 SpreeBootstrapTheme
 ===================
 
-Spree_bootstrap_theme is based on twitter's bootstrap project ported to sass.
+Spree_bootstrap_theme is based on twitter's bootstrap project ported to sass using the bootstrap-sass gem.
 
+https://github.com/thomas-mcdonald/bootstrap-sass
+
+Link to bootstrap homepage:
 
 http://twitter.github.com/bootstrap/download.html#plugins
 
 
-Warning, alpha quality.  Doesn't work yet!
+Alpha Quality!!!!
 
 
 This project is being built against spree version 1.0 and greater
 
 
-Spree uses Skeleton as a lightweight css framework. With the different naming conventions in skeleton and spree with regards to bootstrap this project uses sass mixins as a bridge and where that doesn't completely work some deface overrides to views to enable bootstrap naming conventions.
+Spree uses Skeleton as a lightweight css framework. With the different naming conventions in skeleton and spree
+with regards to bootstrap.  This project uses sass mixins as a bridge.  When that doesn't completely work some
+deface overrides are used add/remove div's & css classes to follow bootstrap naming conventions.
 
 
 Some quick notes on the differences in the css markup conventions:
@@ -30,30 +35,25 @@ Some quick notes on the differences in the css markup conventions:
 | flash=.flash              | flash=.alert              |
 
 
+The current version uses bootstrap 2.0 with the fluid layout. This changes the grid into a percentage instead
+of pixels.
+
 
 Install
 =======
 
 gem 'spree_bootstrap_theme', :git => 'git://github.com/andrewmp1/spree_bootstrap_theme.git'
-NOTE: It's important that you add this line at the bottom of the Gemfile, or at least AFTER any other extension/engine/gem that you'd like to theme (i.e. Spree)
+NOTE: It's important that you add this line at the bottom of the Gemfile, or at least AFTER any other
+extension/engine/gem that you'd like to theme (i.e. Spree)
 
 Make sure you remove any includes in your stylesheets to the spree core stylesheets.
+
+Add this line to a scss stylesheet in your rails app:
+@import 'spree_bootstrap'
 
 From the bootstrap-sass page.  The theme vendors bootstrap in the same way as the gem bootstrap-sass:
 
 # Notes from Bootstrap for SASS
-
-`bootstrap-sass` is an SASS-powered version of [Twitter's Bootstrap](http://github.com/twitter/bootstrap), ready to drop right into your SASS powered applications.
-
-Enjoy.
-
-## Usage
-
-#### CSS
-
-Import "bootstrap" in your SCSS file of choice to get all of Bootstrap's styles, mixins and variables! Don't use Sproket's `//= require` directives for SASS files, because they're horrible and will kill your cat.
-
-    @import "bootstrap";
 
 Need to configure a variable or two? Simple define the value of the variable you want to change *before* importing Bootstrap. SASS will be awesome and respect your existing definition rather than overwriting it with the Bootstrap defaults. A list of customisable variables can be found in the [Bootstrap documentation](http://twitter.github.com/bootstrap/less.html#variables).
 
@@ -79,6 +79,18 @@ Testing
 -------
 
 #TODO
+
+Create a generator that includes a stylesheet w/ the include and some of the twitter variables to override.
+
+Need to finish styling:
+
+forms
+
+product#show
+
+login/signup/cart
+
+fix bootstrip navbar
 
 
 Copyright (c) 2012 Drew Purdy, released under the New BSD License
