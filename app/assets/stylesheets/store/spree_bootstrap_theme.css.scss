@@ -1,5 +1,4 @@
 @import "bootstrap";
-@import "bootstrap-responsive";
 @import "store/spree_bootstrap_mixins";
 @import "store/spree_core_stripped";
 
@@ -42,11 +41,17 @@ nav li{
 
 // Pad content wrapper to position below bootstrip header
 #wrapper {
-  padding: 60px;
+  padding: 20px;
 }
 
 .product-listing {
   @extend .thumbnails;
+}
+
+.product-image {
+  a {
+  @extend .thumbnail;
+  }
 }
 
 // Taken from spree core scss

@@ -83,21 +83,21 @@ $c_border: #8dba53;
   }
 }
 
-#billing, #shipping, #shipping_method,
-#payment, #order_details, #order_summary {
-  margin-top: 10px;
-  border: 1px solid $c_border;
-  padding: 10px;
-
-  legend {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-    color: $c_colored;
-    padding: 5px;
-    margin-left: 15px;
-  }
-}
+//#billing, #shipping, #shipping_method,
+//#payment, #order_details, #order_summary {
+//  margin-top: 10px;
+//  border: 1px solid $c_border;
+//  padding: 10px;
+//
+//  legend {
+//    text-transform: uppercase;
+//    font-weight: bold;
+//    font-size: 14px;
+//    color: $c_colored;
+//    padding: 5px;
+//    margin-left: 15px;
+//  }
+//}
 
 #order_details, #order_summary {
   padding: 0;

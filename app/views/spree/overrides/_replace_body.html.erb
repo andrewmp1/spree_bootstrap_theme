@@ -1,26 +1,24 @@
 <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
 <header id="header" class="" data-hook>
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar">
     <div class="navbar-inner">
-      <div class="container-fluid">
-        <figure id="logo" class="" data-hook>
-          <%= logo %>
+      <div class="container">
+        <figure id="logo" data-hook>
+          <%= link_to image_tag(Spree::Config[:logo],  :alt => "Logo", :id => "logo"), root_url, :class =>'brand' %>
         </figure>
 
-        <nav id="top-nav-bar" class="">
-          <ul id="nav-bar" class="inline" data-hook>
-            <%= render :partial => 'spree/shared/nav_bar' %>
-          </ul>
-        </nav>
+        <ul id="nav-bar" class="nav" data-hook>
+          <li><%= form_tag products_url, :method => :get, :class => 'navbar-form' do %>
+              <input type="search" id="s1" class="search-query" name="keywords" placeholder="Search">
+            <% end %>
+          </li>
+        </ul>
 
-        <% if store_menu? %>
-          <nav class="">
-            <ul id="main-nav-bar" class="inline" data-hook>
-              <%= render :partial => 'spree/shared/store_menu' %>
-            </ul>
-          </nav>
-        <% end %>
+        <ul id="main-nav-bar" class="nav pull-right" data-hook>
+          <%= render :partial => 'spree/shared/login_bar' %>
+          <li id="link-to-cart" data-hook><%= link_to_cart %></li>
+        </ul>
 
       </div>
     </div>
@@ -28,25 +26,28 @@
 </header>
 
 <div id="wrapper" class="" data-hook>
-  <div class="container-fluid">
-    <div class="row-fluid">
-    <% if content_for?(:sidebar) %>
-      <aside id="sidebar" class="span2" data-hook>
-        <%= yield :sidebar %>
-      </aside>
-    <% end %>
+  <div class="container">
+    <div class="row">
+      <% if content_for?(:sidebar) %>
+        <aside id="sidebar" class="span2" data-hook>
+          <%= yield :sidebar %>
+        </aside>
+      <% end %>
 
-    <div id="content" class="<% if !content_for?(:sidebar) %>span8<% else %>span10<% end %>" data-hook>
-      <%= breadcrumbs(@taxon) %>
-      <%= flash_messages %>
-      <%= yield %>
-    </div>
+      <div id="content" class="
+        <% if !content_for?(:sidebar) %>span8
+        <% else %>span10
+        <% end %>" data-hook>
+        <%= breadcrumbs(@taxon) %>
+        <%= flash_messages %>
+        <%= yield %>
+      </div>
     </div>
   </div>
 </div>
 
 <footer id="footer" data-hook>
-  <div class="container-fluid">
+  <div class="container">
     <div id="footer-left" class="columns alpha eight" data-hook>
       <p><%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
     </div>
