@@ -73,7 +73,8 @@ $c_border: #8dba53;
 
     tr[data-hook="order_total"] {
       border-bottom: none;
-    };
+    }
+  ;
 
     #summary-order-total {
       @extend span.price;
@@ -253,6 +254,7 @@ div[data-hook="inside_cart_form"] {
 #order_summary {
   margin-top: 0;
 }
+
 #order {
   p[data-hook="links"] {
     margin-left: 10px;
