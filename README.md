@@ -42,14 +42,14 @@ of pixels.
 Install
 =======
 
-gem 'spree_bootstrap_theme', :git => 'git://github.com/andrewmp1/spree_bootstrap_theme.git'
+gem 'spree_bootstrap_theme', :git => 'git://github.com/Andrewmp1/spree_bootstrap_theme.git'
 NOTE: It's important that you add this line at the bottom of the Gemfile, or at least AFTER any other
 extension/engine/gem that you'd like to theme (i.e. Spree)
 
 Make sure you remove any includes in your stylesheets to the spree core stylesheets.
 
 Add this line to a scss stylesheet in your rails app:
-@import 'spree_bootstrap'
+@import 'store/spree_bootstrap_theme'
 
 From the bootstrap-sass page.  The theme vendors bootstrap in the same way as the gem bootstrap-sass:
 

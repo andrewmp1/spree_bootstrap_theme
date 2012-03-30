@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_bootstrap_theme'
   s.version     = '0.1.0'
   s.summary     = 'Spree theme based on twitter\'s bootstrap'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.description = 'gem description here'
   s.required_ruby_version = '>= 1.8.7'
 
   s.author            = 'Drew Purdy'
