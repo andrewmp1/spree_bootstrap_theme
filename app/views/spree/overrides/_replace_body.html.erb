@@ -3,7 +3,7 @@
 <header id="header" class="" data-hook>
   <div class="navbar">
     <div class="navbar-inner">
-      <div class="container">
+      <div class="container-fluid">
         <figure id="logo" data-hook>
           <%= link_to image_tag(Spree::Config[:logo],  :alt => "Logo", :id => "logo"), root_url, :class =>'brand' %>
         </figure>
@@ -26,8 +26,8 @@
 </header>
 
 <div id="wrapper" class="" data-hook>
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row-fluid">
       <% if content_for?(:sidebar) %>
         <aside id="sidebar" class="span2" data-hook>
           <%= yield :sidebar %>
@@ -47,7 +47,7 @@
 </div>
 
 <footer id="footer" data-hook>
-  <div class="container">
+  <div class="container-fluid">
     <div id="footer-left" class="columns alpha eight" data-hook>
       <p><%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
     </div>
