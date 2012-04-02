@@ -34,10 +34,7 @@
         </aside>
       <% end %>
 
-      <div id="content" class="
-        <% if !content_for?(:sidebar) %>span8
-        <% else %>span10
-        <% end %>" data-hook>
+      <div id="content" class="<% if !content_for?(:sidebar) %>span12<% else %>span10<% end %>" data-hook>
         <%= breadcrumbs(@taxon) %>
         <%= flash_messages %>
         <%= yield %>
@@ -48,10 +45,10 @@
 
 <footer id="footer" data-hook>
   <div class="container-fluid">
-    <div id="footer-left" class="columns alpha eight" data-hook>
+    <div id="footer-left" class="span6" data-hook>
       <p><%= t(:powered_by) %> <%= link_to 'Spree', 'http://spreecommerce.com/' %></p>
     </div>
-    <div id="footer-right" class="columns omega eight" data-hook></div>
+    <div id="footer-right" class="span6" data-hook></div>
   </div>
 </footer>
 

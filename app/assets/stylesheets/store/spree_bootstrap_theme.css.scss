@@ -55,6 +55,10 @@ nav li{
   @extend .thumbnail;
   }
 }
+// Home
+#myCarousel {
+  margin: 0 auto;
+}
 
 // Taken from spree core scss
 /*--------------------------------------*/

@@ -1,3 +1,3 @@
 //= require bootstrap
-//= require_tree .
+//= require store/spree_bootstrap_extras
 

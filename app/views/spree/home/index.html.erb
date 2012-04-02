@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div id="homeCarousel" class="carousel offset2 span8 well">
+    <div class="carousel-inner">
+      <% if @products.any? %>
+        <% @products.limit(3).each do |product| %>
+          <% if Spree::Config[:show_zero_stock_products] || product.has_stock? %>
+            <div class="<%=@products.first == product ? "item active" : "item" %>">
+              <%= large_image(product, :itemprop => "image")  %>
+              <div class="carousel-caption">
+                <h4><%= product.name %></h4>
+                <p><%= product.description[0..200] + "..." %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <a class="carousel-control left" href="#homeCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#homeCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+</div>
+</div><!-- Not sure why I need this extra div -->
+<div class="row-fluid">
+  <div data-hook="homepage_products">
+    <%= render :partial => 'spree/shared/products', :locals => {:products => @products} %>
+  </div>
+</div>
+

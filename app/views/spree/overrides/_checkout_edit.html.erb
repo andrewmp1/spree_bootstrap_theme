@@ -1,0 +1,23 @@
+<div id="checkout" data-hook>
+  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+
+  <div class="row" data-hook="checkout_header">
+    <h1 class="span2" data-hook="checkout_title"><%= t(:checkout) %></h1>
+    <div class="span10" data-hook="checkout_progress"><%= checkout_progress %></div>
+  </div>
+
+  <div class="row" data-hook="checkout_content">
+    <div class="span<%= if @order.state != 'confirm' then '10' else '12' end %>" data-hook="checkout_form_wrapper">
+      <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}", :class => "well form-inline"} do |form| %>
+        <%= render @order.state, :form => form %>
+        <%= submit_tag nil, :id => 'post-final', :style => 'display:none;' %>
+      <% end %>
+    </div>
+    <% if @order.state != 'confirm' %>
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="span2">
+        <%= render :partial => 'summary', :locals => { :order => @order } %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
