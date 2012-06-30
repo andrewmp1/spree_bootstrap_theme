@@ -1,0 +1,15 @@
+<div id="forgot-password">
+  <h3><%= t(:forgot_password) %></h3>
+
+  <p><%= t(:instructions_to_reset_password) %></p>
+
+  <%= form_for Spree::User.new, :as => :user, :url => spree.user_password_path do |f| %>
+    <div class="field">
+      <%= f.label :email, t(:email) %>
+      <%= f.email_field :email %>
+    </div>
+    <p>
+      <%= f.submit t(:reset_password), :class => 'button primary' %>
+    </p>
+  <% end %>
+</div>
